@@ -147,7 +147,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for scroll animation
 document
   .querySelectorAll(
-    ".about-text, .timeline, .achievements-grid, .value-container, .contact-content, .skills-grid"
+    ".about-text, .timeline, .achievements-grid, .value-container, .contact-content, .skills-grid, .resume-card",
   )
   .forEach((el) => {
     el.classList.add("fade-in");
@@ -164,25 +164,27 @@ document.querySelectorAll(".timeline-item").forEach((item) => {
 // ===== Contact Form =====
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
 
-  // Show success message (in production, this would send the form)
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  const originalText = submitBtn.textContent;
+    // Show success message (in production, this would send the form)
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
 
-  submitBtn.textContent = "Message Sent! ✓";
-  submitBtn.style.background = "linear-gradient(135deg, #22c55e, #16a34a)";
+    submitBtn.textContent = "Message Sent! ✓";
+    submitBtn.style.background = "linear-gradient(135deg, #22c55e, #16a34a)";
 
-  setTimeout(() => {
-    submitBtn.textContent = originalText;
-    submitBtn.style.background = "";
-    contactForm.reset();
-  }, 3000);
-});
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.style.background = "";
+      contactForm.reset();
+    }, 3000);
+  });
+}
 
 // ===== Smooth Reveal Animation for Cards =====
 const cardObserver = new IntersectionObserver(
@@ -196,7 +198,7 @@ const cardObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document
@@ -257,6 +259,41 @@ document.head.appendChild(style);
 
 // Initialize particles
 createParticles();
+
+// ===== Resume Modal =====
+const viewResumeBtn = document.getElementById("viewResumeBtn");
+const resumeModal = document.getElementById("resumeModal");
+const closeResumeModal = document.getElementById("closeResumeModal");
+
+function openResumeModal() {
+  resumeModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  resumeModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+if (viewResumeBtn && resumeModal) {
+  viewResumeBtn.addEventListener("click", openResumeModal);
+
+  closeResumeModal.addEventListener("click", closeModal);
+
+  // Close on overlay click
+  resumeModal.addEventListener("click", (e) => {
+    if (e.target === resumeModal) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && resumeModal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+}
 
 console.log("🚀 Portfolio site loaded successfully!");
 console.log("👋 Thanks for visiting!");

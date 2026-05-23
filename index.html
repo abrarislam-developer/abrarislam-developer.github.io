@@ -500,7 +500,7 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="container nav-container">
-        <a href="#" class="nav-logo">&lt;Abrar I. /&gt;</a>
+        <a href="#home" class="nav-logo">&lt;Abrar I. /&gt;</a>
         <ul class="nav-menu" id="navMenu">
           <li class="nav-item">
             <a href="#home" class="nav-link active">Home</a>
@@ -517,6 +517,9 @@
           </li>
           <li class="nav-item">
             <a href="#techstack" class="nav-link">Tech Stack</a>
+          </li>
+          <li class="nav-item">
+            <a href="#resume" class="nav-link">Resume</a>
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link">Contact</a>
@@ -1400,6 +1403,75 @@
       </div>
     </section>
 
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Resume</h2>
+        <p class="section-subtitle">
+          A quick overview of my professional journey. View inline or download
+          the PDF.
+        </p>
+
+        <div class="resume-card">
+          <div class="resume-card-header">
+            <div class="resume-card-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div>
+              <h3>Abrar Islam — Resume</h3>
+              <p class="resume-card-subtitle">
+                SDE 2 | Backend Engineer | Java, Spring Boot, Microservices
+              </p>
+            </div>
+          </div>
+
+          <div class="resume-preview-info">
+            <div class="resume-highlight-row">
+              <span><i class="fas fa-briefcase"></i> 4+ Years Experience</span>
+              <span><i class="fas fa-building"></i> 3 Organizations</span>
+              <span
+                ><i class="fas fa-code"></i> Java • Spring Boot • Angular</span
+              >
+              <span><i class="fas fa-cloud"></i> AWS • Docker • Kafka</span>
+            </div>
+          </div>
+
+          <div class="resume-card-actions">
+            <button class="btn btn-primary" id="viewResumeBtn">
+              <i class="fas fa-eye"></i> View Resume
+            </button>
+            <a href="resume.pdf" class="btn btn-outline" download>
+              <i class="fas fa-download"></i> Download PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <div class="resume-modal-overlay" id="resumeModal">
+      <div class="resume-modal">
+        <div class="resume-modal-header">
+          <h3><i class="fas fa-file-alt"></i> Abrar Islam — Resume</h3>
+          <div class="resume-modal-actions">
+            <a href="resume.pdf" class="btn btn-sm" download>
+              <i class="fas fa-download"></i> Download
+            </a>
+            <button class="resume-modal-close" id="closeResumeModal">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="resume-modal-body">
+          <iframe
+            src="resume.pdf"
+            class="resume-iframe"
+            title="Abrar Islam Resume"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="section-padding">
       <div class="container">
@@ -1453,13 +1525,15 @@
     <script src="js/script.js"></script>
     <script>
       // Override typing phrases for the new content
-      const phrases = [
+      // (reassign the existing array instead of redeclaring with const)
+      phrases.length = 0;
+      phrases.push(
         "Backend Engineer | Java & Microservices",
         "Distributed Systems & Production Engineering",
         "Angular Experience",
         "Expanding into React Full Stack",
         "SDE 2 | Complex Systems | Production Debugging",
-      ];
+      );
     </script>
   </body>
 </html>

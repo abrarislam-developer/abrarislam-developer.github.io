@@ -917,6 +917,194 @@ img {
   align-self: flex-start;
 }
 
+/* ===== Resume Section ===== */
+.resume-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid var(--border-color);
+  max-width: 700px;
+  margin: 0 auto;
+  transition: var(--transition);
+  text-align: center;
+}
+.resume-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+.resume-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.resume-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(99, 102, 241, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.resume-card-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.resume-card-subtitle {
+  color: var(--primary-light);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.resume-preview-info {
+  margin-bottom: 28px;
+}
+.resume-highlight-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.resume-highlight-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.resume-highlight-row span i {
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+.resume-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===== Resume Modal ===== */
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s linear 0.3s,
+    opacity 0.3s ease;
+}
+.resume-modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.resume-modal {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.resume-modal-overlay.active .resume-modal {
+  transform: scale(1);
+}
+.resume-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+.resume-modal-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resume-modal-header h3 i {
+  color: var(--primary);
+}
+.resume-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-light);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.btn-sm:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.resume-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.resume-modal-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+.resume-modal-body {
+  flex: 1;
+  overflow: hidden;
+}
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* ===== Footer ===== */
 .footer {
   padding: 32px 0;
@@ -997,6 +1185,33 @@ img {
 @media (max-width: 768px) {
   .section-padding {
     padding: 60px 0;
+  }
+
+  .resume-card {
+    padding: 24px;
+  }
+
+  .resume-modal {
+    height: 95vh;
+    max-height: none;
+    border-radius: var(--radius);
+  }
+
+  .resume-modal-header {
+    padding: 14px 16px;
+  }
+
+  .resume-modal-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .resume-modal-overlay {
+    padding: 8px;
+  }
+
+  .resume-highlight-row span {
+    font-size: 0.82rem;
+    padding: 6px 12px;
   }
 
   .section-title {
