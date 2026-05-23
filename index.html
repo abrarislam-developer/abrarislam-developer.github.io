@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Abrar Islam | Backend Engineer | Java, Microservices & Distributed Systems
+    </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Additional styles for the new content */
+      .hero-desc-intro {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+      .hero-desc-intro strong {
+        color: var(--text-primary);
+      }
+      .cta-line {
+        font-size: 1.1rem;
+        color: var(--primary-light);
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 36px;
+        padding: 12px 20px;
+        border-left: 3px solid var(--primary);
+        background: rgba(99, 102, 241, 0.05);
+        border-radius: 0 8px 8px 0;
+      }
+      .bring-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .bring-item {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+      .bring-item:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .bring-item h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--primary-light);
+      }
+      .bring-item ul {
+        list-style: none;
+        padding: 0;
+      }
+      .bring-item ul li {
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 6px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .bring-item ul li::before {
+        content: "\25B9";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+      .bring-item p {
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+      .bring-item p:last-child {
+        margin-bottom: 0;
+      }
+
+      .feature-card {
+        background: var(--bg-card);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 28px;
+        transition: var(--transition);
+      }
+      .feature-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .feature-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--text-primary);
+      }
+      .feature-card .feature-subtitle {
+        color: var(--primary-light);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      .feature-card h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--accent-cyan);
+        margin: 16px 0 10px;
+      }
+      .feature-card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .feature-card ul li {
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .feature-card ul li::before {
+        content: "\25B9";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+      .feature-card ul li strong {
+        color: var(--text-primary);
+      }
+      .feature-card .outcome {
+        margin-top: 16px;
+        padding: 12px 16px;
+        background: rgba(99, 102, 241, 0.08);
+        border-radius: 8px;
+        border-left: 3px solid var(--primary);
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .impact-item {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 12px;
+        transition: var(--transition);
+      }
+      .impact-item:hover {
+        border-color: var(--primary);
+      }
+      .impact-item p {
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+      .impact-item strong {
+        color: var(--text-primary);
+      }
+
+      .exp-item {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 24px 28px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 20px;
+        transition: var(--transition);
+        position: relative;
+      }
+      .exp-item:hover {
+        border-color: var(--primary);
+        transform: translateX(4px);
+      }
+      .exp-item .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .exp-item .exp-header h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .exp-item .exp-header .exp-date {
+        font-size: 0.85rem;
+        color: var(--primary-light);
+        font-weight: 500;
+        padding: 4px 12px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 50px;
+      }
+      .exp-item h4 {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      .exp-item ul {
+        list-style: none;
+        padding: 0;
+      }
+      .exp-item ul li {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 6px;
+        padding-left: 18px;
+        position: relative;
+      }
+      .exp-item ul li::before {
+        content: "\25B9";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+
+      .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .highlight-card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 24px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        transition: var(--transition);
+      }
+      .highlight-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+      }
+      .highlight-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--primary-light);
+      }
+      .highlight-card ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+      .highlight-card ul li {
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-bottom: 6px;
+        padding-left: 16px;
+        position: relative;
+      }
+      .highlight-card ul li::before {
+        content: "\25B9";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+      }
+      .highlight-card ul li strong {
+        color: var(--text-primary);
+      }
+
+      .philosophy-text {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .philosophy-text p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+      .philosophy-values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .philosophy-value {
+        padding: 16px;
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+      .philosophy-value:hover {
+        border-color: var(--primary);
+        color: var(--text-primary);
+      }
+
+      .sub-section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary-light);
+        margin-bottom: 16px;
+        margin-top: 40px;
+      }
+
+      .skills-detailed {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+      .skill-group {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+      .skill-group:hover {
+        border-color: var(--primary);
+      }
+      .skill-group h4 {
+        color: var(--primary-light);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .skill-group .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .skill-group .skill-items span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: rgba(99, 102, 241, 0.08);
+        border: 1px solid rgba(99, 102, 241, 0.15);
+        border-radius: 50px;
+        font-size: 0.82rem;
+        color: var(--primary-light);
+        transition: var(--transition);
+      }
+      .skill-group .skill-items span:hover {
+        background: rgba(99, 102, 241, 0.15);
+        border-color: var(--primary);
+        transform: translateY(-1px);
+      }
+      .skill-group .skill-items span i {
+        font-size: 1rem;
+      }
+
+      .contact-full {
+        text-align: center;
+      }
+      .contact-links-large {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+      .contact-links-large a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+      .contact-links-large a:hover {
+        border-color: var(--primary);
+        background: rgba(99, 102, 241, 0.1);
+        transform: translateY(-2px);
+      }
+      .contact-links-large a i {
+        font-size: 1.2rem;
+        color: var(--primary);
+      }
+
+      /* Profile Photo Styles */
+      .profile-photo {
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        z-index: 1;
+        border: 4px solid var(--bg-dark);
+        image-orientation: from-image;
+      }
+      .profile-photo-placeholder {
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        background: var(--bg-dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: var(--text-muted);
+        z-index: 1;
+        gap: 8px;
+      }
+      .profile-photo-placeholder i {
+        font-size: 4rem;
+        color: var(--primary);
+      }
+      .profile-photo-placeholder span {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      /* Company Logo Styles */
+      .company-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .company-logo img,
+      .company-logo .logo-placeholder {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+      .company-logo .logo-placeholder {
+        background: rgba(99, 102, 241, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .bring-grid {
+          grid-template-columns: 1fr;
+        }
+        .highlights-grid {
+          grid-template-columns: 1fr;
+        }
+        .philosophy-values {
+          grid-template-columns: 1fr;
+        }
+        .skills-detailed {
+          grid-template-columns: 1fr;
+        }
+        .contact-links-large {
+          flex-direction: column;
+          align-items: center;
+        }
+        .exp-item .exp-header {
+          flex-direction: column;
+        }
+        .profile-photo,
+        .profile-photo-placeholder {
+          width: 220px;
+          height: 220px;
+        }
+        .profile-photo-placeholder i {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 1024px) {
+        .profile-photo,
+        .profile-photo-placeholder {
+          width: 300px;
+          height: 300px;
+        }
+        .profile-photo-placeholder i {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="nav-logo">&lt;Abrar I. /&gt;</a>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#bring" class="nav-link">What I Bring</a>
+          </li>
+          <li class="nav-item">
+            <a href="#work" class="nav-link">Engineering Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a href="#techstack" class="nav-link">Tech Stack</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-toggle" id="navToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Hi, I'm</p>
+          <h1 class="hero-name">Abrar Islam</h1>
+          <h2
+            class="hero-title"
+            style="
+              font-size: 1.2rem;
+              height: auto;
+              min-height: 2rem;
+              line-height: 1.4;
+            "
+          >
+            <span class="typing-text"></span><span class="cursor">|</span>
+          </h2>
+          <div class="hero-desc-intro">
+            Backend-focused engineer with
+            <strong>4+ years of experience</strong> building scalable enterprise
+            applications, backend systems, APIs, and production workflows.
+            Strong expertise in
+            <strong
+              >Java 17, Spring Boot, Microservices, REST APIs, SQL, MongoDB,
+              Kafka, Docker, Kubernetes, and AWS</strong
+            >, with hands-on experience across
+            <strong
+              >frontend (Angular), backend, database design, integrations, and
+              production debugging</strong
+            >.
+          </div>
+          <div class="hero-desc-intro">
+            Experienced in
+            <strong
+              >understanding complex codebases, solving high-impact production
+              issues, system design, and independently owning end-to-end feature
+              development</strong
+            >. Currently expanding into
+            <strong>React Full Stack development</strong> to build scalable
+            end-to-end applications.
+          </div>
+          <div class="cta-line">
+            "Building scalable systems. Solving complex problems. Engineering
+            production-grade software."
+          </div>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+            <a href="#work" class="btn btn-outline">View My Work</a>
+          </div>
+          <div class="hero-social">
+            <a
+              href="https://github.com/abrar3497"
+              target="_blank"
+              class="social-link"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/abrarislam-developer/"
+              target="_blank"
+              class="social-link"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="mailto:abrarofficial3497@gmail.com" class="social-link"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-wrapper">
+            <img
+              src="images/profile.jpg"
+              alt="Abrar Islam"
+              class="profile-photo"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I am a
+              <strong>backend-focused Software Development Engineer</strong>
+              passionate about building scalable, maintainable, and
+              production-ready systems.
+            </p>
+            <p>
+              Over the years, I have worked across
+              <strong
+                >enterprise applications, fraud validation systems, warehouse
+                management platforms, and internal business systems</strong
+              >, contributing across
+              <strong
+                >backend engineering, frontend customizations, system design,
+                integrations, database optimization, and production
+                debugging</strong
+              >.
+            </p>
+            <p>
+              I enjoy working on
+              <strong
+                >complex business problems, distributed systems, APIs,
+                performance optimization, debugging production issues, and
+                designing systems that are reliable and easy to evolve</strong
+              >.
+            </p>
+            <p>
+              One of my strongest areas is the ability to
+              <strong
+                >quickly understand large enterprise codebases, debug complex
+                issues, and deliver stable, business-critical solutions with
+                minimal regression risk</strong
+              >.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number" data-target="4">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="3">0</span>
+                <span class="stat-label">Organizations</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="95">0</span>
+                <span class="stat-label">FPS %</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="80">0</span>
+                <span class="stat-label">Query Latency Reduced %</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Bring Section -->
+    <section id="bring" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">What I Bring</h2>
+        <div class="bring-grid">
+          <div class="bring-item">
+            <h3>
+              <i
+                class="fas fa-server"
+                style="margin-right: 8px; color: var(--primary)"
+              ></i>
+              Backend Engineering
+            </h3>
+            <ul>
+              <li>
+                Build scalable backend systems using
+                <strong
+                  >Java 17, Spring Boot, REST APIs, and Microservices</strong
+                >
+              </li>
+              <li>
+                Design business workflows and backend architectures for
+                enterprise applications
+              </li>
+              <li>
+                Develop APIs, integrations, validations, and business-critical
+                services
+              </li>
+              <li>
+                Build maintainable, production-ready systems with clean
+                abstractions
+              </li>
+            </ul>
+          </div>
+          <div class="bring-item">
+            <h3>
+              <i
+                class="fas fa-bug"
+                style="margin-right: 8px; color: var(--primary)"
+              ></i>
+              Production Debugging & Complex Systems
+            </h3>
+            <ul>
+              <li>
+                Strong at understanding
+                <strong>large enterprise codebases quickly</strong>
+              </li>
+              <li>
+                Experienced in
+                <strong
+                  >root cause analysis, production debugging, and incident
+                  resolution</strong
+                >
+              </li>
+              <li>
+                Comfortable solving <strong>cross-layer issues</strong> spanning
+                frontend, backend, APIs, databases, and integrations
+              </li>
+              <li>
+                Strong debugging experience involving
+                <strong
+                  >Kafka, MongoDB, SQL, APIs, asynchronous systems, and business
+                  workflows</strong
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bring-item">
+            <h3>
+              <i
+                class="fas fa-sitemap"
+                style="margin-right: 8px; color: var(--primary)"
+              ></i>
+              System Design & Engineering Ownership
+            </h3>
+            <ul>
+              <li>
+                Translate business requirements into scalable technical
+                solutions
+              </li>
+              <li>
+                Design systems involving
+                <strong
+                  >backend, database, APIs, frontend, integrations, automation,
+                  and security</strong
+                >
+              </li>
+              <li>
+                Comfortable owning features from
+                <strong
+                  >requirement gathering → implementation → testing → production
+                  deployment</strong
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bring-item">
+            <h3>
+              <i
+                class="fas fa-layer-group"
+                style="margin-right: 8px; color: var(--primary)"
+              ></i>
+              Full Stack Development
+            </h3>
+            <ul>
+              <li>
+                Hands-on experience with
+                <strong>Angular-based frontend development</strong>
+              </li>
+              <li>
+                Built UI workflows, business forms, validation systems, and
+                feature enhancements
+              </li>
+              <li>
+                Currently expanding into
+                <strong>React Full Stack Engineering</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Engineering Work Section -->
+    <section
+      id="work"
+      class="section-padding"
+      style="background: var(--bg-section)"
+    >
+      <div class="container">
+        <h2 class="section-title">Featured Engineering Work</h2>
+
+        <div class="feature-card">
+          <h3>Enterprise Profitability & Resource Analytics Platform</h3>
+          <div class="feature-subtitle">
+            End-to-End Ownership | Frontend + Backend + Database + System Design
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 16px">
+            Designed and developed an enterprise profitability platform for
+            project, employee, and client-level profitability analytics,
+            forecasting, historical reporting, and financial visibility.
+          </p>
+          <h4>What I Owned</h4>
+          <ul>
+            <li>
+              Designed the
+              <strong>complete system architecture independently</strong>
+            </li>
+            <li>
+              Built
+              <strong
+                >frontend workflows, backend APIs, database models, and
+                integrations</strong
+              >
+            </li>
+            <li>
+              Implemented
+              <strong
+                >profitability calculations, automation, forecasting, and
+                historical analysis</strong
+              >
+            </li>
+            <li>
+              Designed
+              <strong
+                >role-based access control and secure salary protection
+                mechanisms</strong
+              >
+            </li>
+            <li>
+              Owned implementation across
+              <strong
+                >frontend, backend, database, integrations, testing, and
+                business logic</strong
+              >
+            </li>
+          </ul>
+          <h4>Engineering Contributions</h4>
+          <ul>
+            <li>
+              Built a
+              <strong>multi-page profitability dashboard</strong> supporting
+              project-level, employee-level, and client-level profitability
+              analysis
+            </li>
+            <li>
+              Designed and implemented <strong>20+ APIs</strong> for analytics,
+              calculations, payroll sync, timesheets, historical reporting, and
+              resource allocation
+            </li>
+            <li>
+              Integrated directly with <strong>Zoho Payroll</strong> for secure
+              compensation retrieval and <strong>Zoho People</strong> for
+              timesheet synchronization
+            </li>
+            <li>
+              Designed <strong>salary encryption mechanisms</strong> using
+              secure encryption patterns and access control
+            </li>
+            <li>
+              Built scheduled automation for
+              <strong
+                >employee sync, profitability recalculation, exchange rates, and
+                reporting workflows</strong
+              >
+            </li>
+            <li>
+              Designed and implemented
+              <strong>database architecture</strong> involving snapshots,
+              historical profitability, payroll, exchange rates, and resource
+              lifecycle management
+            </li>
+            <li>
+              Built
+              <strong>forecasting and variance analysis systems</strong> for
+              profitability tracking
+            </li>
+          </ul>
+          <div class="outcome">
+            Delivered an
+            <strong>end-to-end production-grade platform independently</strong>,
+            spanning frontend, backend, integrations, database, security,
+            automation, and system design.
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3>FCU (Fraud Control Unit) — Loan Fraud Validation System</h3>
+          <div class="feature-subtitle">
+            Java | Angular | MongoDB | Kafka | AI Integrations
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 16px">
+            Owned development and enhancement of the
+            <strong>Fraud Control Unit (FCU)</strong> within the loan journey,
+            responsible for fraud validation, document scrutiny workflows, and
+            case-level verification before loan approval.
+          </p>
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>
+              Owned <strong>FCU feature development end-to-end</strong> across
+              <strong>backend (Java)</strong> and
+              <strong>frontend (Angular)</strong>
+            </li>
+            <li>
+              Built and enhanced workflows for
+              <strong
+                >loan fraud checks, document verification, and case validation
+                systems</strong
+              >
+            </li>
+            <li>
+              Worked extensively with
+              <strong>MongoDB as the primary datastore</strong>, improving
+              performance and query efficiency
+            </li>
+            <li>
+              Reduced <strong>MongoDB query latency by 60–80%</strong> through
+              compound indexing and optimization
+            </li>
+            <li>
+              Integrated with
+              <strong>third-party AI platform (LoanGuard)</strong> for document
+              scrutiny and fraud suggestions with a
+              <strong>45-minute SLA</strong>
+            </li>
+            <li>
+              Integrated with
+              <strong>internal AI recommendation system (BIU)</strong> with a
+              <strong>5-minute SLA</strong> for fraud analysis suggestions
+            </li>
+            <li>
+              Designed <strong>SLA-based fallback handling</strong>, allowing
+              loan processing to continue seamlessly if AI systems breached
+              response thresholds
+            </li>
+            <li>
+              Implemented
+              <strong
+                >billing-safe handling for delayed LoanGuard responses</strong
+              >, ensuring late responses were tracked and not billed
+            </li>
+            <li>
+              Re-architected synchronous workflows into
+              <strong>Kafka-driven event pipelines</strong>, enabling
+              asynchronous execution and scalable service communication
+            </li>
+            <li>
+              Diagnosed and resolved a
+              <strong>critical Kafka race condition</strong> involving
+              concurrent processing of the same case, eliminating consumer lag
+              during restarts
+            </li>
+            <li>
+              Resolved a <strong>critical production defect</strong> causing
+              repeated case re-initiation due to applicant mismatch handling
+            </li>
+            <li>
+              Built backend and Angular-based frontend support for
+              <strong>document lifecycle workflows</strong>
+            </li>
+            <li>
+              Eliminated duplicate agency mappings using
+              <strong>priority-based deduplication logic</strong>
+            </li>
+            <li>
+              Migrated API gateway workflows from
+              <strong>Apigee to NGINX</strong>, implementing routing,
+              authentication, and access handling
+            </li>
+            <li>
+              Authored <strong>Low-Level Design (LLD) documents</strong>, API
+              contracts, and system design flows
+            </li>
+          </ul>
+        </div>
+
+        <h3
+          style="
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+          "
+        >
+          Production Debugging & Engineering Impact
+        </h3>
+
+        <div class="impact-item">
+          <p>
+            Resolved a
+            <strong>critical allocation validation defect</strong> preventing
+            edits to historical project allocations by correcting serializer
+            lifecycle handling and instance-aware validation in backend
+            workflows.
+          </p>
+        </div>
+        <div class="impact-item">
+          <p>
+            Improved
+            <strong
+              >Quick Search performance and frontend responsiveness</strong
+            >
+            by removing expensive pagination calls and implementing caching
+            strategies to reduce API latency.
+          </p>
+        </div>
+        <div class="impact-item">
+          <p>
+            Fixed
+            <strong>timeline recommendation inconsistencies</strong> caused by
+            incorrect auto-applied filters and unnecessary API waterfall calls,
+            improving reliability and UX.
+          </p>
+        </div>
+        <div class="impact-item">
+          <p>
+            Contributed to enhancements in
+            <strong>recommendation systems</strong>, improving categorization
+            and skill-based filtering logic.
+          </p>
+        </div>
+        <div class="impact-item">
+          <p>
+            Strong experience debugging
+            <strong>cross-layer issues</strong> spanning frontend, backend,
+            state management, APIs, database queries, and business workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>SDE 2</h3>
+            <span class="exp-date">April 2025 – Present</span>
+          </div>
+          <div class="company-logo">
+            <!-- =================================================== -->
+            <!-- TO ADD COMPANY LOGO:                                -->
+            <!-- 1. Save logo as "coffeebeans.png" in images/        -->
+            <!-- 2. Replace with:                                    -->
+            <!-- <img src="images/coffeebeans.png"                   -->
+            <!--      alt="CoffeeBeans Consulting">                  -->
+            <!-- =================================================== -->
+            <div class="logo-placeholder">CB</div>
+            <h4 style="margin-bottom: 0">CoffeeBeans Consulting</h4>
+          </div>
+          <p
+            style="
+              color: var(--text-secondary);
+              margin-bottom: 12px;
+              font-size: 0.92rem;
+            "
+          >
+            Working across enterprise systems involving backend engineering,
+            frontend development, production debugging, system integrations, and
+            end-to-end feature ownership.
+          </p>
+          <ul>
+            <li>
+              Develop backend services and business logic using
+              <strong>Java 17</strong>
+            </li>
+            <li>
+              Build frontend customizations and feature enhancements using
+              <strong>Angular & TypeScript</strong>
+            </li>
+            <li>
+              Write
+              <strong>unit tests for service layers and business logic</strong>
+            </li>
+            <li>
+              Develop and execute
+              <strong>MongoDB scripts and database updates</strong>
+            </li>
+            <li>
+              Debug production issues using
+              <strong>Grafana logs and system analysis</strong>
+            </li>
+            <li>
+              Work on
+              <strong
+                >bug fixes, feature requests, performance improvements, and
+                business workflows</strong
+              >
+            </li>
+            <li>
+              Collaborate across engineering teams to deliver stable releases
+            </li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>Associate Software Engineer</h3>
+            <span class="exp-date">Nov 2023 – Jan 2025</span>
+          </div>
+          <div class="company-logo">
+            <div class="logo-placeholder">WT</div>
+            <h4 style="margin-bottom: 0">Wissen Technology</h4>
+          </div>
+          <ul>
+            <li>
+              Delivered quick and efficient fixes for
+              <strong>client-reported issues</strong>
+            </li>
+            <li>
+              Built enterprise features from scratch with strong delivery
+              consistency
+            </li>
+            <li>
+              Developed reusable backend modules using
+              <strong>Spring Boot</strong>
+            </li>
+            <li>
+              Worked closely with R&D teams to stabilize production releases
+            </li>
+            <li>
+              Improved maintainability through logging and system enhancements
+            </li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3>Software Engineer</h3>
+            <span class="exp-date">Jul 2021 – May 2023</span>
+          </div>
+          <div class="company-logo">
+            <div class="logo-placeholder">MA</div>
+            <h4 style="margin-bottom: 0">Manhattan Associates</h4>
+          </div>
+          <ul>
+            <li>
+              Built scalable backend systems for
+              <strong>Warehouse Management Systems (WMS)</strong>
+            </li>
+            <li>
+              Developed backend modules using
+              <strong>Java, Spring Boot, JDBC, and Oracle DB</strong>
+            </li>
+            <li>
+              Worked on production issue resolution and enterprise-scale
+              workflows
+            </li>
+            <li>
+              Supported server environments and real-time client issue handling
+            </li>
+          </ul>
+        </div>
+
+        <h3
+          style="
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+          "
+        >
+          Engineering Highlights
+        </h3>
+
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <h3>Quality & Delivery</h3>
+            <ul>
+              <li>
+                Delivered
+                <strong
+                  >FCU feature development with zero post-release production
+                  defects</strong
+                >
+                across an extended ownership period
+              </li>
+              <li>
+                Maintained
+                <strong>First Pass Success Percentage (FPS) above 95%</strong>
+              </li>
+              <li>
+                Achieved
+                <strong>CMSTP deployment success rate above 95%</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-card">
+            <h3>Performance & Optimization</h3>
+            <ul>
+              <li>Reduced <strong>MongoDB query latency by 60–80%</strong></li>
+              <li>
+                Designed SLA-aware workflows for
+                <strong>AI integrations and delayed-response handling</strong>
+              </li>
+              <li>
+                Improved frontend responsiveness through
+                <strong>API optimization and caching</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-card">
+            <h3>Engineering Ownership</h3>
+            <ul>
+              <li>
+                Independently owned
+                <strong>end-to-end platform development</strong>
+              </li>
+              <li>
+                Strong experience in
+                <strong
+                  >complex codebase understanding and production
+                  debugging</strong
+                >
+              </li>
+              <li>
+                Hands-on experience handling
+                <strong>P0/P1 incidents and root cause analysis</strong>
+              </li>
+              <li>
+                Designed scalable workflows involving
+                <strong>Kafka, APIs, databases, and distributed systems</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section
+      id="techstack"
+      class="section-padding"
+      style="background: var(--bg-section)"
+    >
+      <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="skills-detailed">
+          <div class="skill-group">
+            <h4>Languages</h4>
+            <div class="skill-items">
+              <span><i class="devicon-java-plain colored"></i> Java 17</span>
+              <span><i class="devicon-plain colored"></i> SQL</span>
+              <span
+                ><i class="devicon-javascript-plain colored"></i>
+                JavaScript</span
+              >
+              <span
+                ><i class="devicon-typescript-plain colored"></i>
+                TypeScript</span
+              >
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Backend</h4>
+            <div class="skill-items">
+              <span
+                ><i class="devicon-spring-plain colored"></i> Spring Boot</span
+              >
+              <span><i class="devicon-plain colored"></i> Microservices</span>
+              <span><i class="devicon-plain colored"></i> REST APIs</span>
+              <span><i class="devicon-plain colored"></i> JDBC</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Frontend</h4>
+            <div class="skill-items">
+              <span
+                ><i class="devicon-angularjs-plain colored"></i> Angular</span
+              >
+              <span
+                ><i class="devicon-typescript-plain colored"></i>
+                TypeScript</span
+              >
+              <span><i class="devicon-html5-plain colored"></i> HTML</span>
+              <span
+                ><i class="devicon-react-original colored"></i> React
+                (Learning)</span
+              >
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Database</h4>
+            <div class="skill-items">
+              <span><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+              <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
+              <span
+                ><i class="devicon-oracle-original colored"></i> Oracle DB</span
+              >
+              <span
+                ><i class="devicon-postgresql-plain colored"></i>
+                PostgreSQL</span
+              >
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Messaging & Distributed Systems</h4>
+            <div class="skill-items">
+              <span
+                ><i class="devicon-apachekafka-original colored"></i>
+                Kafka</span
+              >
+              <span><i class="devicon-plain colored"></i> Event-Driven</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>DevOps & Cloud</h4>
+            <div class="skill-items">
+              <span><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span
+                ><i class="devicon-kubernetes-plain colored"></i>
+                Kubernetes</span
+              >
+              <span><i class="devicon-jenkins-line colored"></i> Jenkins</span>
+              <span
+                ><i class="devicon-amazonwebservices-original colored"></i>
+                AWS</span
+              >
+              <span><i class="devicon-plain colored"></i> CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Monitoring & Tools</h4>
+            <div class="skill-items">
+              <span
+                ><i class="devicon-grafana-original colored"></i> Grafana</span
+              >
+              <span><i class="devicon-git-plain colored"></i> Git</span>
+              <span><i class="devicon-jira-plain colored"></i> JIRA</span>
+              <span
+                ><i class="devicon-confluence-original colored"></i>
+                Confluence</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <h3
+          style="
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+          "
+        >
+          Engineering Philosophy
+        </h3>
+        <div class="philosophy-text">
+          <p>
+            I believe strong engineering is not just about writing code — it is
+            about
+            <strong
+              >understanding systems deeply, solving business problems,
+              designing maintainable architectures, and building reliable
+              software that scales</strong
+            >.
+          </p>
+          <div class="philosophy-values">
+            <div class="philosophy-value">
+              Writing clean and maintainable systems
+            </div>
+            <div class="philosophy-value">
+              Solving complex engineering problems
+            </div>
+            <div class="philosophy-value">
+              Understanding large codebases quickly
+            </div>
+            <div class="philosophy-value">
+              Building scalable backend architectures
+            </div>
+            <div class="philosophy-value">
+              Delivering stable, production-ready software
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">
+          Interested in backend engineering, scalable systems, or collaboration?
+          Let's talk.
+        </p>
+        <div class="contact-full">
+          <div class="contact-links-large">
+            <a href="https://github.com/abrar3497" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abrarislam-developer/"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="mailto:abrarofficial3497@gmail.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2026 Abrar Islam. Built with <i class="fas fa-heart"></i> for
+          engineering excellence
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/abrar3497" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/abrarislam-developer/"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:abrarofficial3497@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Override typing phrases for the new content
+      const phrases = [
+        "Backend Engineer | Java & Microservices",
+        "Distributed Systems & Production Engineering",
+        "Angular Experience",
+        "Expanding into React Full Stack",
+        "SDE 2 | Complex Systems | Production Debugging",
+      ];
+    </script>
+  </body>
+</html>
