@@ -17,43 +17,6 @@ This is my personal portfolio website built with HTML, CSS, and JavaScript, host
 - **Smooth scroll animations** and particle effects
 - **Mobile-friendly** hamburger navigation
 
-## How to Deploy on GitHub Pages
-
-### Step 1: Create a GitHub Repository
-
-1. Go to [GitHub](https://github.com) and sign in
-2. Click the **+** icon → **New repository**
-3. Name it **exactly**: `<your-username>.github.io`
-   - Example: if your username is `abrarkhan`, name it `abrarkhan.github.io`
-4. Make it **Public**
-5. Click **Create repository**
-
-### Step 2: Upload Files
-
-Using Git commands:
-
-```bash
-cd C:\Users\Abrar\Desktop\abrarkhan.github.io
-git init
-git add .
-git commit -m "Initial commit - portfolio website"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-git push -u origin main
-```
-
-### Step 3: Your Site is Live!
-
-- Your site will be available at: `https://<your-username>.github.io`
-- It may take 1-2 minutes for GitHub to deploy it
-
-### Step 4: Customize It
-
-- **Replace placeholder content**: Update text, companies, and achievements with your real experience
-- **Update profile links**: Change GitHub, LinkedIn, and email URLs
-- **Add your photo**: Replace the hero image placeholder with your actual photo
-- **Custom domain (optional)**: Go to Settings → Pages → Add custom domain
-
 ## Tech Stack
 
 - HTML5
@@ -63,7 +26,7 @@ git push -u origin main
 ## Project Structure
 
 ```
-abrarkhan.github.io/
+abrarislam-developer.github.io/
 ├── index.html          # Main HTML file
 ├── css/
 │   └── style.css       # All styles
