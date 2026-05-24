@@ -55,16 +55,17 @@ function animateCounters() {
 
   counters.forEach((counter) => {
     const target = parseInt(counter.getAttribute("data-target"));
+    const suffix = counter.getAttribute("data-suffix") || "";
     const increment = target / 60; // Complete in ~60 frames
     let current = 0;
 
     function updateCounter() {
       current += increment;
       if (current < target) {
-        counter.textContent = Math.ceil(current) + "+";
+        counter.textContent = Math.ceil(current) + suffix;
         requestAnimationFrame(updateCounter);
       } else {
-        counter.textContent = target + "+";
+        counter.textContent = target + suffix;
       }
     }
 
